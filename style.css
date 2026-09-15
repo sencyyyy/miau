@@ -1,0 +1,70 @@
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+
+
+body {
+    /* color: greenyellow; */
+    /* background: linear-gradient(rgb(91, 15, 179), rgb(222, 1, 222)); */
+    font-family: 'Comic Sans MS';
+    background: url('https://upload.wikimedia.org/wikipedia/commons/b/bc/Nerd-msn.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original');
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    container-type: inline-size;
+}
+
+
+@container (width > 1252.90px) { /* Se a tela tiver espaço, colocar os quadrados na horizontal */
+    #blocks {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 95vw;
+        max-height: min-content;
+    }
+}
+
+@container (width < 1252.89px) { /* Se não, colocar na vertical */
+    #blocks {
+        display: grid;
+        place-items: center;
+    }
+
+    div.block {
+        justify-self: stretch;
+        display: grid;
+        place-items: center;
+    }
+}
+
+
+div.block {
+    transition: 0.5s;
+    min-width: max-content;
+    border: 5px solid;
+    border-radius: 5px;
+    align-self: stretch;
+}
+
+div.block:hover {
+    transition: 0.5s;
+    scale: 125%;
+}
+
+#block1 {
+    background-color: rgba(255, 0, 0, 0.667);
+    border-color: crimson; 
+}
+
+#block2 {
+    background-color: rgba(0, 238, 255, 0.677);
+    border-color: rgb(14, 114, 119);
+}
+
+#block3 {
+    background-color: rgba(0, 255, 13, 0.667);
+    border-color: rgba(21, 129, 0, 0.667);
+}
